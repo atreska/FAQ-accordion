@@ -53,6 +53,8 @@ html {
     --lightPink: hsl(275, 100%, 97%);
     --grayishPurple: hsl(292, 16%, 49%);
     --darkPurple: hsl(292, 42%, 14%);
+
+    font-family: 'Work Sans', sans-serif;
 }
 
 body {
@@ -69,7 +71,7 @@ body {
 
 .accordion {
     background-color: var(--white);
-    padding: 3em 1.5em;
+    padding: 1.5em;
     border-radius: 12px;
     position: absolute;
     top: 140px;
@@ -80,19 +82,63 @@ body {
 .main-header {
     display: flex;
     gap: 20px;
+    padding-bottom: 1.2em;
+}
+
+.title-icon {
+    width: 1.4em;
+}
+
+.accordion-item:hover,
+.plus-icon:hover {
+    cursor: pointer;
+
 }
 
 .accordion-title-items {
     display: flex;
+    justify-content: space-between;
 }
 
 
 
-h2 {
-    font-size: 16px;
+.accordion-title {
+    color: var(--darkPurple);
+    font-size: 17px;
+    width: 80%;
+    font-weight: 600;
+}
 
+.plus-icon {
+    background-color: transparent;
+    background-image: url('./images/icon-plus.svg');
+    background-repeat: no-repeat;
+    border: none;
+    padding: .9em;
+    align-self: center;
 }
 
 .accordion-content {
     display: none;
+}
+
+p {
+    color: var(--grayishPurple);
+    font-size: 1rem;
+}
+
+hr {
+    opacity: .1;
+    margin: .6em 0;
+    border-left: none;
+    border-right: none;
+}
+
+.accordion-item.is-open .accordion-content {
+    display: block;
+    padding: 1em 0;
+}
+
+.accordion-item.is-open .accordion-title-items .plus-icon {
+    background-image: url('./images/icon-minus.svg');
 }
