@@ -76,6 +76,8 @@ body {
     position: absolute;
     top: 140px;
     width: 90%;
+    max-width: 500px;
+    box-shadow: 1px 3px 6px -1px rgba(0, 0, 0, 0.2);
 
 }
 
@@ -101,7 +103,6 @@ body {
 }
 
 
-
 .accordion-title {
     color: var(--darkPurple);
     font-size: 17px;
@@ -120,6 +121,7 @@ body {
 
 .accordion-content {
     display: none;
+    transition: 1000ms;
 }
 
 p {
@@ -137,8 +139,21 @@ hr {
 .accordion-item.is-open .accordion-content {
     display: block;
     padding: 1em 0;
+
 }
 
 .accordion-item.is-open .accordion-title-items .plus-icon {
     background-image: url('./images/icon-minus.svg');
+}
+
+@media (min-width: 534px) {
+    body {
+        background-image: url("./images/background-pattern-desktop.svg");
+        background-size: 100%;
+        top: -20px;
+    }
+
+    .accordion-item {
+        max-width: 500px;
+    }
 }
